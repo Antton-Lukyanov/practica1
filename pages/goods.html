@@ -4,49 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары</title>
+    <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div id="header">
-        <h1>ХХХ Сервак ХХХ</h1>
-    </div>
-    
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-    </div>
-    
-    <div id="content">
-        <h2>Наши услуги</h2>
+    <div class="page-container">
+        <div class="header">ХХХ Сервак ХХХ</div>
         
-        <!-- Товар 1 -->
-        <div class="product-card">
-            <img src="../images/product1.jpg" alt="Ремонт и покраска дисков" width="200" height="150">
-            <h3>Ремонт и покраска дисков</h3>
-            <p>Цена: 40 000 руб.</p>
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
         </div>
         
-        <!-- Товар 2 -->
-        <div class="product-card">
-            <img src="../images/product2.jpg" alt="Установка нештатного выхлопа" width="200" height="150">
-            <h3>Установка нештатного выхлопа</h3>
-            <p>Цена: 200 000 руб.</p>
+        <div class="content">
+            <h2 class="section-title">Наши услуги</h2>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="../images/product1.jpg" alt="Ремонт и покраска дисков">
+                    <h3>Ремонт и покраска дисков</h3>
+                    <p>Цена: 40 000 руб.</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="../images/product2.jpg" alt="Установка нештатного выхлопа">
+                    <h3>Установка нештатного выхлопа</h3>
+                    <p>Цена: 200 000 руб.</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="../images/product3.jpg" alt="Восстановление оптики">
+                    <h3>Восстановление оптики</h3>
+                    <p>Цена: 20 000 руб.</p>
+                </div>
+            </div>
         </div>
         
-        <!-- Товар 3 -->
-        <div class="product-card">
-            <img src="../images/product3.jpg" alt="Восстановление оптики" width="200" height="150">
-            <h3>Восстановление оптики</h3>
-            <p>Цена: 20 000 руб.</p>
-        </div>
-    </div>
-    
-    <div id="footer">
-        <p>Все права защищены © 2025</p>
+        <div class="footer">Все права защищены © 2025</div>
     </div>
 </body>
 </html>
