@@ -1,8 +1,9 @@
+/* ==== БАЗОВЫЕ СТИЛИ ==== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0fa3b1 0%, #2a9d8f 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
 }
 
@@ -17,7 +18,7 @@ body {
 
 /* ==== ШАПКА ==== */
 .header {
-    background: linear-gradient(135deg, #264653 0%, #2a9d8f 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
     text-align: center;
     padding: 30px;
@@ -28,7 +29,7 @@ body {
 
 /* ==== НАВИГАЦИЯ ==== */
 .nav {
-    background: #264653;
+    background: #2c3e50;
     padding: 20px 0;
 }
 
@@ -55,7 +56,7 @@ body {
 }
 
 .nav-link:hover {
-    background: rgba(42, 157, 143, 0.3);
+    background: rgba(255,255,255,0.1);
     transform: translateY(-2px);
 }
 
@@ -74,7 +75,7 @@ body {
 
 .profile-title {
     font-size: 32px;
-    color: #264653;
+    color: #2c3e50;
     margin-bottom: 10px;
     font-weight: 300;
 }
@@ -85,13 +86,13 @@ body {
     border-radius: 15px;
     object-fit: cover;
     margin: 20px auto;
-    border: 4px solid #2a9d8f;
-    box-shadow: 0 8px 25px rgba(42, 157, 143, 0.3);
+    border: 4px solid #667eea;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 .profile-name {
     font-size: 24px;
-    color: #264653;
+    color: #2c3e50;
     margin: 10px 0;
     font-weight: 500;
 }
@@ -103,11 +104,11 @@ body {
 }
 
 .about-me {
-    background: linear-gradient(135deg, #f1faee 0%, #e9f5db 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 25px;
     border-radius: 15px;
     margin: 30px 0;
-    border-left: 5px solid #2a9d8f;
+    border-left: 5px solid #667eea;
     font-size: 16px;
     line-height: 1.8;
 }
@@ -122,19 +123,19 @@ body {
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #2a9d8f 0%, #0fa3b1 100%);
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     color: white;
     padding: 12px 25px;
     border-radius: 25px;
     font-weight: 600;
     font-size: 14px;
-    box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
     transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(42, 157, 143, 0.4);
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
 /* ==== ОПЫТ РАБОТЫ ==== */
@@ -144,7 +145,7 @@ body {
 
 .section-title {
     font-size: 28px;
-    color: #264653;
+    color: #2c3e50;
     text-align: center;
     margin-bottom: 30px;
     font-weight: 300;
@@ -156,7 +157,7 @@ body {
     margin: 20px 0;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-left: 4px solid #2a9d8f;
+    border-left: 4px solid #667eea;
     transition: transform 0.3s ease;
 }
 
@@ -166,7 +167,7 @@ body {
 
 .experience-title {
     font-size: 20px;
-    color: #264653;
+    color: #2c3e50;
     margin: 0 0 10px 0;
     font-weight: 600;
 }
@@ -210,17 +211,16 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
-    border: 2px solid #2a9d8f;
 }
 
 .product-card h3 {
-    color: #264653;
+    color: #2c3e50;
     margin: 15px 0 10px 0;
     font-size: 20px;
 }
 
 .product-card p {
-    color: #2a9d8f;
+    color: #667eea;
     font-size: 18px;
     font-weight: 600;
     margin: 10px 0;
@@ -237,7 +237,7 @@ body {
     margin: 25px 0;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-left: 4px solid #2a9d8f;
+    border-left: 4px solid #667eea;
     transition: transform 0.3s ease;
 }
 
@@ -246,7 +246,7 @@ body {
 }
 
 .news-item h3 {
-    color: #264653;
+    color: #2c3e50;
     margin: 0 0 15px 0;
     font-size: 22px;
 }
@@ -268,15 +268,15 @@ body {
 }
 
 .contact-info {
-    background: linear-gradient(135deg, #f1faee 0%, #e9f5db 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 30px;
     border-radius: 15px;
     margin: 20px 0;
-    border-left: 5px solid #2a9d8f;
+    border-left: 5px solid #667eea;
 }
 
 .contact-info h3 {
-    color: #264653;
+    color: #2c3e50;
     margin: 20px 0 10px 0;
     font-size: 18px;
 }
@@ -289,7 +289,7 @@ body {
 }
 
 .contact-button {
-    background: linear-gradient(135deg, #2a9d8f 0%, #0fa3b1 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     padding: 15px 30px;
@@ -303,7 +303,7 @@ body {
 
 .contact-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(42, 157, 143, 0.4);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 /* ==== ПРАКТИКИ ==== */
@@ -313,7 +313,7 @@ body {
     margin: 20px 0;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-left: 4px solid #2a9d8f;
+    border-left: 4px solid #667eea;
     transition: transform 0.3s ease;
 }
 
@@ -322,7 +322,7 @@ body {
 }
 
 .practice-item h3 {
-    color: #264653;
+    color: #2c3e50;
     margin: 0 0 15px 0;
     font-size: 20px;
 }
@@ -335,7 +335,7 @@ body {
 
 /* ==== ФУТЕР ==== */
 .footer {
-    background: linear-gradient(135deg, #264653 0%, #2a9d8f 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
     text-align: center;
     padding: 30px;
