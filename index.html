@@ -8,9 +8,11 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="header">ХХХ Сервак ХХХ</div>
+        <header class="header">
+            <h1>ХХХ Сервак ХХХ</h1>
+        </header>
         
-        <div class="nav">
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
@@ -18,45 +20,53 @@
                 <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
             </ul>
-        </div>
+        </nav>
         
-        <div class="content">
-            <div class="profile-header">
+        <main class="content">
+            <article class="profile-header">
                 <h1 class="profile-title">Информация об авторе</h1>
                 <img class="profile-photo" src="images/photo.png" alt="Фото автора">
                 <h2 class="profile-name">Лукьянов Антон Павлович</h2>
                 <p class="profile-group">ЭФБО-02-24</p>
-            </div>
+            </article>
 
-            <div class="about-me">
+            <section class="about-me">
+                <h2>Обо мне</h2>
                 <p>Я родился в Мордовии в 70-х годах. Долгое время испытывал мучения из-за ужасных дорог. Но в один из дней решил, что пора. Пора открывать свой сервис, но обычный сервис слишком скучно и решил открыть тюнинг сервис и понеслать ...</p>
-            </div>
+            </section>
 
-            <div class="skills-container">
-                <div class="skill-tag">Скорость</div>
-                <div class="skill-tag">Невидимость</div>
-                <div class="skill-tag">Телекинез</div>
-                <div class="skill-tag">Честность</div>
-            </div>
+            <section class="skills-container">
+                <h2 class="section-title">Мои навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">Скорость</div>
+                    <div class="skill-tag">Невидимость</div>
+                    <div class="skill-tag">Телекинез</div>
+                    <div class="skill-tag">Честность</div>
+                </div>
+            </section>
 
-            <div class="experience-section">
+            <section class="experience-section">
                 <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Шиномонтажник</h3>
-                    <p class="experience-desc">Установил мировой рекорд, переобувая Макса Ферстапена.</p>
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <h3 class="experience-title">Шиномонтажник</h3>
+                        <p class="experience-desc">Установил мировой рекорд, переобувая Макса Ферстапена.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Маляр</h3>
+                        <p class="experience-desc">Да, это открасил Титаник и Боинг 710.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Механик</h3>
+                        <p class="experience-desc">БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ</p>
+                    </article>
                 </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Маляр</h3>
-                    <p class="experience-desc">Да, это открасил Титаник и Боинг 710.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Механик</h3>
-                    <p class="experience-desc">БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ</p>
-                </div>
-            </div>
-        </div>
+            </section>
+        </main>
         
-        <div class="footer">Все права защищены © 2025</div>
+        <footer class="footer">
+            <p>Все права защищены © 2025</p>
+        </footer>
     </div>
 </body>
 </html>
