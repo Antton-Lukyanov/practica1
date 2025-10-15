@@ -3,59 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости</title>
+    <title>Новости - ХХХ Сервак ХХХ</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div class="page-container">
+    <div class="page">
         <header class="header">
-            <h1>ХХХ Сервак ХХХ</h1>
+            <h1 class="header__title">ХХХ Сервак ХХХ</h1>
         </header>
         
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
         
-        <main class="content">
-            <h2 class="section-title">Наши новости</h2>
-            
-            <div class="news-container">
-                <article class="news-card">
-                    <h3 class="news-title">Президент не боится 12.5.1 ???</h3>
-                    <p class="news-meta">Дата публикации: 24.09.2025 | Автор: Васильев Т.И.</p>
-                    <div class="news-text">
-                        <p>Сегодня утром ПРЕЗИДЕНТ посетил наш автосервис и заказал установку кастомной выхлопной системы на свой служебный автомобиль.</p>
-                        <p>"Хочу, чтобы было слышно мой подход к работе" - сказал ОН.</p>
-                    </div>
-                </article>
+        <main class="main">
+            <section class="news">
+                <h2 class="news__title">Наши новости</h2>
                 
-                <article class="news-card">
-                    <h3 class="news-title">Блогеры - такие блогеры.</h3>
-                    <p class="news-meta">Дата публикации: 20.09.2025 | Автор: Обухова Ю.П.</p>
-                    <div class="news-text">
-                        <p>Известный блогер Саня Булкин посетил наш сервис и заказал полный детейлинг салона своего автомобиля. Интересно, что, узнав стоимость услуги, вместо оплаты он предложил разместить рекламу нашего сервиса в своих соцсетях.</p>
-                    </div>
-                </article>
-                
-                <article class="news-card">
-                    <h3 class="news-title">Залетаем на биржу !!!</h3>
-                    <p class="news-meta">Дата публикации: 17.09.2025 | Автор: Костюк Е.С.</p>
-                    <div class="news-text">
-                        <p>С гордостью сообщаем, что наш сервис начинает листинг на Московской бирже. Старт продаж первого пакета акций запланирован на 25 января 2025 года.</p>
-                        <p>Это исторический момент для нашей компании и отличная возможность для инвесторов стать частью нашего успеха.</p>
-                    </div>
-                </article>
-            </div>
+                <div class="news__container">
+                    <article class="news-card">
+                        <h3 class="news-card__title">Президент не боится 12.5.1 ???</h3>
+                        <p class="news-card__meta">Дата публикации: 24.09.2025 | Автор: Васильев Т.И.</p>
+                        <div class="news-card__text">
+                            <p>Сегодня утром ПРЕЗИДЕНТ посетил наш автосервис и заказал установку кастомной выхлопной системы на свой служебный автомобиль.</p>
+                            <p>"Хочу, чтобы было слышно мой подход к работе" - сказал ОН.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <h3 class="news-card__title">Блогеры - такие блогеры.</h3>
+                        <p class="news-card__meta">Дата публикации: 20.09.2025 | Автор: Обухова Ю.П.</p>
+                        <div class="news-card__text">
+                            <p>Известный блогер Саня Булкин посетил наш сервис и заказал полный детейлинг салона своего автомобиля. Интересно, что, узнав стоимость услуги, вместо оплаты он предложил разместить рекламу нашего сервиса в своих соцсетях.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <h3 class="news-card__title">Залетаем на биржу !!!</h3>
+                        <p class="news-card__meta">Дата публикации: 17.09.2025 | Автор: Костюк Е.С.</p>
+                        <div class="news-card__text">
+                            <p>С гордостью сообщаем, что наш сервис начинает листинг на Московской бирже. Старт продаж первого пакета акций запланирован на 25 января 2025 года.</p>
+                            <p>Это исторический момент для нашей компании и отличная возможность для инвесторов стать частью нашего успеха.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </main>
         
         <footer class="footer">
-            <p>Все права защищены © 2025</p>
+            <p class="footer__text">Все права защищены © 2025</p>
         </footer>
     </div>
 </body>
