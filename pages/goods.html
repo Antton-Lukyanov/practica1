@@ -10,6 +10,9 @@
     <div class="page">
         <header class="header">
             <h1 class="header__title">ХХХ Сервак ХХХ</h1>
+            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                <span class="theme-toggle__icon">🌙</span>
+            </button>
         </header>
         
         <nav class="nav">
@@ -35,32 +38,190 @@
         <main class="main">
             <section class="products">
                 <h2 class="products__title">Наши услуги</h2>
+                <p class="text-center" style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">
+                    Качественный тюнинг и обслуживание автомобилей любой сложности
+                </p>
                 
                 <div class="products__grid">
-                    <article class="product-card">
+                    <article class="product-card product-card--discount" data-product="wheel_repair">
                         <img class="product-card__image" src="../images/product1.jpg" alt="Ремонт и покраска дисков">
                         <h3 class="product-card__name">Ремонт и покраска дисков</h3>
-                        <p class="product-card__price">40 000 руб.</p>
+                        <p class="product-card__price">
+                            <span class="product-card__original-price">50 000 руб.</span>
+                            40 000 руб.
+                        </p>
+                        <p class="product-card__desc">Полное восстановление литых и штампованных дисков</p>
+                        <button class="button button--primary product-card__select">Выбрать</button>
                     </article>
                     
-                    <article class="product-card">
+                    <article class="product-card" data-product="exhaust_installation">
                         <img class="product-card__image" src="../images/product2.jpg" alt="Установка нештатного выхлопа">
                         <h3 class="product-card__name">Установка нештатного выхлопа</h3>
                         <p class="product-card__price">200 000 руб.</p>
+                        <p class="product-card__desc">Кастомные выхлопные системы с гарантией</p>
+                        <button class="button button--primary product-card__select">Выбрать</button>
                     </article>
                     
-                    <article class="product-card">
+                    <article class="product-card" data-product="optics_restoration">
                         <img class="product-card__image" src="../images/product3.jpg" alt="Восстановление оптики">
                         <h3 class="product-card__name">Восстановление оптики</h3>
                         <p class="product-card__price">20 000 руб.</p>
+                        <p class="product-card__desc">Полировка и герметизация фар любой марки</p>
+                        <button class="button button--primary product-card__select">Выбрать</button>
                     </article>
+
+                    <article class="product-card product-card--discount" data-product="full_tuning">
+                        <img class="product-card__image" src="../images/product1.jpg" alt="Полный тюнинг">
+                        <h3 class="product-card__name">Полный тюнинг пакет</h3>
+                        <p class="product-card__price">
+                            <span class="product-card__original-price">300 000 руб.</span>
+                            250 000 руб.
+                        </p>
+                        <p class="product-card__desc">Комплексное преображение вашего автомобиля</p>
+                        <button class="button button--primary product-card__select">Выбрать</button>
+                    </article>
+
+                    <article class="product-card" data-product="chip_tuning">
+                        <img class="product-card__image" src="../images/product2.jpg" alt="Чип-тюнинг">
+                        <h3 class="product-card__name">Чип-тюнинг</h3>
+                        <p class="product-card__price">45 000 руб.</p>
+                        <p class="product-card__desc">Увеличение мощности +15-30%</p>
+                        <button class="button button--primary product-card__select">Выбрать</button>
+                    </article>
+
+                    <article class="product-card" data-product="detailing">
+                        <img class="product-card__image" src="../images/product3.jpg" alt="Детейлинг">
+                        <h3 class="product-card__name">Экспресс-детейлинг</h3>
+                        <p class="product-card__price">15 000 руб.</p>
+                        <p class="product-card__desc">Комплексная химчистка и полировка</p>
+                        <button class="button button--primary product-card__select">Выбрать</button>
+                    </article>
+                </div>
+
+                <div class="text-center mt-lg">
+                    <button class="button button--large button--primary" id="orderSelected">
+                        Заказать выбранные услуги
+                    </button>
                 </div>
             </section>
         </main>
         
         <footer class="footer">
-            <p class="footer__text">Все права защищены © 2025</p>
+            <div class="footer__content">
+                <p class="footer__text">ХХХ Сервак ХХХ - тюнинг ателье премиум-класса</p>
+                <p class="footer__text">Все права защищены © 2025</p>
+            </div>
         </footer>
     </div>
+
+    <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-toggle__icon');
+        
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Управление состояниями карточек товаров
+        let selectedProducts = [];
+
+        document.querySelectorAll('.product-card__select').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const productCard = this.closest('.product-card');
+                const productId = productCard.getAttribute('data-product');
+                
+                productCard.classList.toggle('product-card--selected');
+                
+                if (productCard.classList.contains('product-card--selected')) {
+                    this.textContent = 'Выбрано ✓';
+                    this.style.background = 'var(--color-success)';
+                    selectedProducts.push(productId);
+                } else {
+                    this.textContent = 'Выбрать';
+                    this.style.background = '';
+                    selectedProducts = selectedProducts.filter(id => id !== productId);
+                }
+                
+                updateOrderButton();
+            });
+        });
+
+        // Клик по карточке (кроме кнопки)
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('product-card__select')) {
+                    const productId = this.getAttribute('data-product');
+                    const button = this.querySelector('.product-card__select');
+                    
+                    this.classList.toggle('product-card--selected');
+                    
+                    if (this.classList.contains('product-card--selected')) {
+                        button.textContent = 'Выбрано ✓';
+                        button.style.background = 'var(--color-success)';
+                        selectedProducts.push(productId);
+                    } else {
+                        button.textContent = 'Выбрать';
+                        button.style.background = '';
+                        selectedProducts = selectedProducts.filter(id => id !== productId);
+                    }
+                    
+                    updateOrderButton();
+                }
+            });
+        });
+
+        // Обновление кнопки заказа
+        function updateOrderButton() {
+            const orderButton = document.getElementById('orderSelected');
+            if (selectedProducts.length > 0) {
+                orderButton.textContent = `Заказать выбранные услуги (${selectedProducts.length})`;
+                orderButton.disabled = false;
+            } else {
+                orderButton.textContent = 'Заказать выбранные услуги';
+                orderButton.disabled = true;
+            }
+        }
+
+        // Обработка заказа
+        document.getElementById('orderSelected').addEventListener('click', function() {
+            if (selectedProducts.length > 0) {
+                alert(`Вы выбрали ${selectedProducts.length} услуг! Переходим к оформлению заказа.`);
+                // Здесь будет переход к форме заказа
+            }
+        });
+
+        // Анимация появления товаров
+        document.addEventListener('DOMContentLoaded', function() {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -10,6 +10,9 @@
     <div class="page">
         <header class="header">
             <h1 class="header__title">ХХХ Сервак ХХХ</h1>
+            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                <span class="theme-toggle__icon">🌙</span>
+            </button>
         </header>
         
         <nav class="nav">
@@ -35,6 +38,9 @@
         <main class="main">
             <section class="contacts">
                 <h2 class="contacts__title">Контакты</h2>
+                <p class="text-center" style="color: var(--color-text-secondary); margin-bottom: var(--space-xl);">
+                    Свяжитесь с нами любым удобным способом
+                </p>
                 
                 <div class="contacts__container">
                     <div class="contact-info">
@@ -47,14 +53,48 @@
                         <h3 class="contact-info__title">Телефон:</h3>
                         <p class="contact-info__text">+7 (977) 166-22-00</p>
                         
-                        <button class="button button--primary button--large" onclick="contactDialog.showModal()">Связаться с нами</button>
+                        <h3 class="contact-info__title">Время работы:</h3>
+                        <p class="contact-info__text">Пн-Пт: 9:00-20:00<br>Сб-Вс: 10:00-18:00</p>
+                        
+                        <button class="button button--primary button--large" onclick="contactDialog.showModal()">
+                            Связаться с нами
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats mt-xl">
+                    <h2 class="stats__title">Мы в цифрах</h2>
+                    <div class="stats__grid">
+                        <div class="stat">
+                            <div class="stat__number" data-count="3">0</div>
+                            <div class="stat__label">Года на рынке</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number" data-count="500">0</div>
+                            <div class="stat__label">Довольных клиентов</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number" data-count="24">0</div>
+                            <div class="stat__label">Часа поддержки</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number" data-count="99">0</div>
+                            <div class="stat__label">Процентов качества</div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
         
         <footer class="footer">
-            <p class="footer__text">Все права защищены © 2025</p>
+            <div class="footer__content">
+                <p class="footer__text">ХХХ Сервак ХХХ - тюнинг ателье премиум-класса</p>
+                <p class="footer__text">Все права защищены © 2025</p>
+                <p class="footer__contact">
+                    Телефон: <a href="tel:+79771662200" class="footer__link">+7 (977) 166-22-00</a> | 
+                    Email: <a href="mailto:bibaloveff@gmail.com" class="footer__link">bibaloveff@gmail.com</a>
+                </p>
+            </div>
         </footer>
 
         <!-- Модальное окно для формы обратной связи -->
@@ -122,6 +162,30 @@
     </div>
 
     <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-toggle__icon');
+        
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
         // Функция для отправки формы
         function submitForm() {
             const form = document.getElementById('feedbackForm');
@@ -168,6 +232,36 @@
                 event.preventDefault();
             }
         });
+
+        // Анимация счетчиков статистики
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 20);
+        }
+
+        // Запуск анимации счетчиков при прокрутке
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('[data-count]');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-count'));
+                        animateCounter(counter, target);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.stats'));
     </script>
 </body>
 </html>
