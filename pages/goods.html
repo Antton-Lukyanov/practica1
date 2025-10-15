@@ -3,51 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товары</title>
+    <title>Товары - ХХХ Сервак ХХХ</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div class="page-container">
+    <div class="page">
         <header class="header">
-            <h1>ХХХ Сервак ХХХ</h1>
+            <h1 class="header__title">ХХХ Сервак ХХХ</h1>
         </header>
         
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="practices.html">Практики</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
             </ul>
         </nav>
         
-        <main class="content">
-            <h2 class="section-title">Наши услуги</h2>
-            
-            <div class="products-grid">
-                <article class="product-card">
-                    <img class="product-image" src="../images/product1.jpg" alt="Ремонт и покраска дисков">
-                    <h3 class="product-name">Ремонт и покраска дисков</h3>
-                    <p class="product-price">40 000 руб.</p>
-                </article>
+        <main class="main">
+            <section class="products">
+                <h2 class="products__title">Наши услуги</h2>
                 
-                <article class="product-card">
-                    <img class="product-image" src="../images/product2.jpg" alt="Установка нештатного выхлопа">
-                    <h3 class="product-name">Установка нештатного выхлопа</h3>
-                    <p class="product-price">200 000 руб.</p>
-                </article>
-                
-                <article class="product-card">
-                    <img class="product-image" src="../images/product3.jpg" alt="Восстановление оптики">
-                    <h3 class="product-name">Восстановление оптики</h3>
-                    <p class="product-price">20 000 руб.</p>
-                </article>
-            </div>
+                <div class="products__grid">
+                    <article class="product-card">
+                        <img class="product-card__image" src="../images/product1.jpg" alt="Ремонт и покраска дисков">
+                        <h3 class="product-card__name">Ремонт и покраска дисков</h3>
+                        <p class="product-card__price">40 000 руб.</p>
+                    </article>
+                    
+                    <article class="product-card">
+                        <img class="product-card__image" src="../images/product2.jpg" alt="Установка нештатного выхлопа">
+                        <h3 class="product-card__name">Установка нештатного выхлопа</h3>
+                        <p class="product-card__price">200 000 руб.</p>
+                    </article>
+                    
+                    <article class="product-card">
+                        <img class="product-card__image" src="../images/product3.jpg" alt="Восстановление оптики">
+                        <h3 class="product-card__name">Восстановление оптики</h3>
+                        <p class="product-card__price">20 000 руб.</p>
+                    </article>
+                </div>
+            </section>
         </main>
         
         <footer class="footer">
-            <p>Все права защищены © 2025</p>
+            <p class="footer__text">Все права защищены © 2025</p>
         </footer>
     </div>
 </body>
