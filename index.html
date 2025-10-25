@@ -94,7 +94,6 @@
                 <h2 class="experience__title">Мой опыт работы</h2>
                 <div class="experience__grid">
                     <article class="experience-card" data-experience="tire">
-                        <div class="experience-card__icon">🚗</div>
                         <h3 class="experience-card__title">Шиномонтажник</h3>
                         <p class="experience-card__desc">Установил мировой рекорд, переобувая Макса Ферстапена.</p>
                         <div class="experience-card__details">
@@ -104,7 +103,6 @@
                     </article>
                     
                     <article class="experience-card" data-experience="painter">
-                        <div class="experience-card__icon">🎨</div>
                         <h3 class="experience-card__title">Маляр</h3>
                         <p class="experience-card__desc">Да, это открасил Титаник и Боинг 710.</p>
                         <div class="experience-card__details">
@@ -114,7 +112,6 @@
                     </article>
                     
                     <article class="experience-card" data-experience="mechanic">
-                        <div class="experience-card__icon">🔧</div>
                         <h3 class="experience-card__title">Механик</h3>
                         <p class="experience-card__desc">БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ</p>
                         <div class="experience-card__details">
@@ -122,29 +119,6 @@
                             <p><strong>Период:</strong> 2022-настоящее время</p>
                         </div>
                     </article>
-                </div>
-            </section>
-
-            <!-- Блок статистики -->
-            <section class="stats">
-                <h2 class="stats__title">Наша статистика</h2>
-                <div class="stats__grid">
-                    <div class="stat">
-                        <div class="stat__number" data-count="150">0</div>
-                        <div class="stat__label">Успешных проектов</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat__number" data-count="3">0</div>
-                        <div class="stat__label">Года опыта</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat__number" data-count="98">0</div>
-                        <div class="stat__label">Довольных клиентов</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat__number" data-count="24">0</div>
-                        <div class="stat__label">Часа в сутках</div>
-                    </div>
                 </div>
             </section>
         </main>
@@ -166,7 +140,6 @@
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = themeToggle.querySelector('.theme-toggle__icon');
         
-        // Проверяем сохраненную тему
         const savedTheme = localStorage.getItem('theme') || 'light';
         if (savedTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -196,10 +169,8 @@
             
             if (hiddenText.classList.contains('about__hidden--visible')) {
                 this.textContent = 'Свернуть';
-                this.classList.add('button--secondary');
             } else {
                 this.textContent = 'Читать дальше';
-                this.classList.remove('button--secondary');
             }
         });
 
@@ -208,96 +179,28 @@
             skill.addEventListener('click', function() {
                 const level = this.querySelector('.skill__level');
                 const targetLevel = this.getAttribute('data-level');
-                
-                // Анимируем заполнение уровня
                 level.style.width = targetLevel + '%';
-                level.textContent = targetLevel + '%';
             });
         });
 
         // Интерактивность карточек опыта
         document.querySelectorAll('.experience-card').forEach(card => {
             card.addEventListener('click', function() {
-                // Переключаем класс активности
                 this.classList.toggle('experience-card--active');
                 
-                // Показываем/скрываем детали
                 const details = this.querySelector('.experience-card__details');
                 if (this.classList.contains('experience-card--active')) {
                     details.style.display = 'block';
-                    details.style.height = details.scrollHeight + 'px';
                 } else {
-                    details.style.height = '0';
-                    setTimeout(() => {
-                        details.style.display = 'none';
-                    }, 300);
+                    details.style.display = 'none';
                 }
             });
         });
-
-        // Анимация счетчиков статистики
-        function animateCounter(element, target) {
-            let current = 0;
-            const increment = target / 100;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(current);
-            }, 20);
-        }
-
-        // Запуск анимации счетчиков при прокрутке
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('[data-count]');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-count'));
-                        animateCounter(counter, target);
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        observer.observe(document.querySelector('.stats'));
 
         // Инициализация уровней навыков
         document.querySelectorAll('.skill__level').forEach(level => {
             const targetLevel = level.parentElement.getAttribute('data-level');
             level.style.width = '0%';
-        });
-
-        // Добавляем обработчики для интерактивности
-        document.querySelector('.about').addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-        });
-
-        document.querySelector('.about').addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-
-        // Анимация появления элементов при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.profile, .about, .skills, .experience, .stats');
-            elements.forEach((element, index) => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
-        });
-
-        // Добавляем класс для интерактивных элементов
-        document.querySelectorAll('.skill, .experience-card, .stat').forEach(element => {
-            element.style.cursor = 'pointer';
         });
     </script>
 </body>

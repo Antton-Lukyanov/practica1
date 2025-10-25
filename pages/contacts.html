@@ -61,28 +61,6 @@
                         </button>
                     </div>
                 </div>
-
-                <div class="stats mt-xl">
-                    <h2 class="stats__title">Мы в цифрах</h2>
-                    <div class="stats__grid">
-                        <div class="stat">
-                            <div class="stat__number" data-count="3">0</div>
-                            <div class="stat__label">Года на рынке</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat__number" data-count="500">0</div>
-                            <div class="stat__label">Довольных клиентов</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat__number" data-count="24">0</div>
-                            <div class="stat__label">Часа поддержки</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat__number" data-count="99">0</div>
-                            <div class="stat__label">Процентов качества</div>
-                        </div>
-                    </div>
-                </div>
             </section>
         </main>
         
@@ -232,36 +210,6 @@
                 event.preventDefault();
             }
         });
-
-        // Анимация счетчиков статистики
-        function animateCounter(element, target) {
-            let current = 0;
-            const increment = target / 100;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(current);
-            }, 20);
-        }
-
-        // Запуск анимации счетчиков при прокрутке
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const counters = entry.target.querySelectorAll('[data-count]');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-count'));
-                        animateCounter(counter, target);
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        observer.observe(document.querySelector('.stats'));
     </script>
 </body>
 </html>
