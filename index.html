@@ -4,204 +4,259 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная - ХХХ Сервак ХХХ</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-    <div class="page">
-        <header class="header">
-            <h1 class="header__title">ХХХ Сервак ХХХ</h1>
-            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
-                <span class="theme-toggle__icon">🌙</span>
-            </button>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        <!-- Header -->
+        <header class="bg-dark text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">ХХХ Сервак ХХХ</h1>
+                        <p class="mb-0 opacity-75">Тюнинг ателье премиум-класса</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-warning text-dark">ЭФБО-02-24</span>
+                    </div>
+                </div>
+            </div>
         </header>
-        
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item nav__item--active">
-                    <a class="nav__link" href="index.html">Главная</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="pages/news.html">Новости</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="pages/practices.html">Практики</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="pages/goods.html">Товары</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
-                </li>
-            </ul>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/news.html">
+                                <i class="bi bi-newspaper me-1"></i>Новости
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/practices.html">
+                                <i class="bi bi-code-slash me-1"></i>Практики
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/goods.html">
+                                <i class="bi bi-tools me-1"></i>Товары
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        
-        <main class="main">
-            <!-- Блок профиля -->
-            <section class="profile">
-                <h1 class="profile__title">Информация об авторе</h1>
-                <img class="profile__photo" src="images/photo.png" alt="Фото автора - Лукьянов Антон Павлович">
-                <h2 class="profile__name">Лукьянов Антон Павлович</h2>
-                <p class="profile__group">ЭФБО-02-24</p>
+
+        <!-- Main Content -->
+        <main class="container my-4">
+            <!-- Profile Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center mb-3 mb-md-0">
+                                <img src="images/photo.png" alt="Фото автора - Лукьянов Антон Павлович" 
+                                     class="img-fluid rounded" style="width: 200px; height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="card-title h4 text-primary">Лукьянов Антон Павлович</h2>
+                                <p class="card-text text-muted mb-2">
+                                    <i class="bi bi-bookmark-check-fill text-primary"></i>
+                                    Студент группы ЭФБО-02-24
+                                </p>
+                                <p class="card-text">
+                                    Основатель тюнинг-ателье "ХХХ Сервак ХХХ". Специализация - кастомные решения для автомобилей любой сложности.
+                                </p>
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <span class="badge bg-primary">Тюнинг</span>
+                                    <span class="badge bg-success">Ремонт</span>
+                                    <span class="badge bg-info">Покраска</span>
+                                    <span class="badge bg-warning">Детейлинг</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <!-- Блок "Обо мне" -->
-            <section class="about">
-                <h2 class="about__title">Обо мне</h2>
-                <div class="about__content">
-                    <p class="about__text">
-                        Я родился в Мордовии в 70-х годах. Долгое время испытывал мучения из-за ужасных дорог. 
-                        Но в один из дней решил, что пора. Пора открывать свой сервис, но обычный сервис слишком 
-                        скучно и решил открыть тюнинг сервис и понеслать ...
-                    </p>
-                    <div class="about__hidden" id="hiddenText">
-                        <p class="about__text">
-                            С тех пор мы стали ведущим тюнинг-ателье в Москве, специализируясь на кастомных решениях 
-                            для настоящих ценителей автомобильной культуры. Наш подход - это сочетание современных 
-                            технологий и индивидуального подхода к каждому клиенту.
+            <!-- About Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-person-circle text-primary"></i>
+                            Обо мне
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Я родился в Мордовии в 70-х годах. Долгое время испытывал мучения из-за ужасных дорог. 
+                            Но в один из дней решил, что пора. Пора открывать свой сервис, но обычный сервис слишком 
+                            скучно и решил открыть тюнинг сервис и понеслать ...
                         </p>
-                    </div>
-                    <button class="button button--primary about__toggle" id="aboutToggle">
-                        Читать дальше
-                    </button>
-                </div>
-            </section>
-
-            <!-- Блок навыков -->
-            <section class="skills">
-                <h2 class="skills__title">Мои навыки</h2>
-                <div class="skills__grid">
-                    <div class="skill skill--speed" data-skill="speed">
-                        <span class="skill__name">Скорость</span>
-                        <div class="skill__level" data-level="90"></div>
-                    </div>
-                    <div class="skill skill--invisibility" data-skill="invisibility">
-                        <span class="skill__name">Невидимость</span>
-                        <div class="skill__level" data-level="85"></div>
-                    </div>
-                    <div class="skill skill--telekinesis" data-skill="telekinesis">
-                        <span class="skill__name">Телекинез</span>
-                        <div class="skill__level" data-level="75"></div>
-                    </div>
-                    <div class="skill skill--honesty" data-skill="honesty">
-                        <span class="skill__name">Честность</span>
-                        <div class="skill__level" data-level="95"></div>
+                        <div class="collapse" id="moreAbout">
+                            <p class="card-text">
+                                С тех пор мы стали ведущим тюнинг-ателье в Москве, специализируясь на кастомных решениях 
+                                для настоящих ценителей автомобильной культуры. Наш подход - это сочетание современных 
+                                технологий и индивидуального подхода к каждому клиенту.
+                            </p>
+                        </div>
+                        <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#moreAbout">
+                            Читать дальше
+                        </button>
                     </div>
                 </div>
             </section>
 
-            <!-- Блок опыта работы -->
-            <section class="experience">
-                <h2 class="experience__title">Мой опыт работы</h2>
-                <div class="experience__grid">
-                    <article class="experience-card" data-experience="tire">
-                        <h3 class="experience-card__title">Шиномонтажник</h3>
-                        <p class="experience-card__desc">Установил мировой рекорд, переобувая Макса Ферстапена.</p>
-                        <div class="experience-card__details">
-                            <p><strong>Достижения:</strong> Рекорд Гиннеса по скорости замены шин</p>
-                            <p><strong>Период:</strong> 2018-2020</p>
+            <!-- Skills Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-tools text-primary"></i>
+                            Мои навыки
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Скорость работы</span>
+                                        <span class="text-primary">90%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Невидимость для ГИБДД</span>
+                                        <span class="text-primary">85%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Телекинез</span>
+                                        <span class="text-primary">75%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-info" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Честность</span>
+                                        <span class="text-primary">95%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </article>
-                    
-                    <article class="experience-card" data-experience="painter">
-                        <h3 class="experience-card__title">Маляр</h3>
-                        <p class="experience-card__desc">Да, это открасил Титаник и Боинг 710.</p>
-                        <div class="experience-card__details">
-                            <p><strong>Проекты:</strong> Титаник (реставрация), Боинг 710</p>
-                            <p><strong>Период:</strong> 2020-2022</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h5 mb-0">
+                            <i class="bi bi-briefcase text-primary"></i>
+                            Мой опыт работы
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-tire-pressure text-primary display-4 mb-3"></i>
+                                        <h5 class="card-title">Шиномонтажник</h5>
+                                        <p class="card-text small text-muted">
+                                            Установил мировой рекорд, переобувая Макса Ферстапена.
+                                        </p>
+                                        <div class="mt-auto">
+                                            <span class="badge bg-primary">2018-2020</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-brush text-primary display-4 mb-3"></i>
+                                        <h5 class="card-title">Маляр</h5>
+                                        <p class="card-text small text-muted">
+                                            Да, это открасил Титаник и Боинг 710.
+                                        </p>
+                                        <div class="mt-auto">
+                                            <span class="badge bg-success">2020-2022</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-gear text-primary display-4 mb-3"></i>
+                                        <h5 class="card-title">Механик</h5>
+                                        <p class="card-text small text-muted">
+                                            БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ
+                                        </p>
+                                        <div class="mt-auto">
+                                            <span class="badge bg-info">2022-настоящее время</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </article>
-                    
-                    <article class="experience-card" data-experience="mechanic">
-                        <h3 class="experience-card__title">Механик</h3>
-                        <p class="experience-card__desc">БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ БМВ</p>
-                        <div class="experience-card__details">
-                            <p><strong>Специализация:</strong> BMW полного цикла</p>
-                            <p><strong>Период:</strong> 2022-настоящее время</p>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </section>
         </main>
-        
-        <footer class="footer">
-            <div class="footer__content">
-                <p class="footer__text">ХХХ Сервак ХХХ - тюнинг ателье премиум-класса</p>
-                <p class="footer__text">Все права защищены © 2025</p>
-                <p class="footer__contact">
-                    Телефон: <a href="tel:+79771662200" class="footer__link">+7 (977) 166-22-00</a> | 
-                    Email: <a href="mailto:bibaloveff@gmail.com" class="footer__link">bibaloveff@gmail.com</a>
-                </p>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 ХХХ Сервак ХХХ. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="pages/contacts.html" class="text-white text-decoration-none me-3">
+                            <i class="bi bi-telephone me-1"></i>Контакты
+                        </a>
+                        <span class="text-white-50 me-3">|</span>
+                        <span class="text-white-50">Тел: +7 (977) 166-22-00</span>
+                    </div>
+                </div>
             </div>
         </footer>
     </div>
 
-    <script>
-        // Переключение темы
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('.theme-toggle__icon');
-        
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        if (savedTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeIcon.textContent = '☀️';
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            
-            if (currentTheme === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                themeIcon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeIcon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        // Раскрытие текста "Обо мне"
-        const aboutToggle = document.getElementById('aboutToggle');
-        const hiddenText = document.getElementById('hiddenText');
-        
-        aboutToggle.addEventListener('click', function() {
-            hiddenText.classList.toggle('about__hidden--visible');
-            
-            if (hiddenText.classList.contains('about__hidden--visible')) {
-                this.textContent = 'Свернуть';
-            } else {
-                this.textContent = 'Читать дальше';
-            }
-        });
-
-        // Анимация уровней навыков
-        document.querySelectorAll('.skill').forEach(skill => {
-            skill.addEventListener('click', function() {
-                const level = this.querySelector('.skill__level');
-                const targetLevel = this.getAttribute('data-level');
-                level.style.width = targetLevel + '%';
-            });
-        });
-
-        // Интерактивность карточек опыта
-        document.querySelectorAll('.experience-card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.classList.toggle('experience-card--active');
-                
-                const details = this.querySelector('.experience-card__details');
-                if (this.classList.contains('experience-card--active')) {
-                    details.style.display = 'block';
-                } else {
-                    details.style.display = 'none';
-                }
-            });
-        });
-
-        // Инициализация уровней навыков
-        document.querySelectorAll('.skill__level').forEach(level => {
-            const targetLevel = level.parentElement.getAttribute('data-level');
-            level.style.width = '0%';
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
